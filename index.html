@@ -32,6 +32,9 @@ body {
 
 }
 
+.honbun{
+        max-width: 1000px;
+}
 
 /* サイドバー */
 
@@ -187,7 +190,8 @@ body {
         }
 
         th{
-            background-color: #eaeaea
+            background-color: #eaeaea;
+            width: 30%;
         }
 
         .hyomidasi{
@@ -220,15 +224,63 @@ body {
 
 
 
+        .gyoseikubun img{
+            width: 70%;
+        }
+
+        .gyoseikubun span{
+            font-size: 12px;
+        }
+
+        .sikakuyoko{
+            display: flex;
+            gap: 2px; /* 各ラベルの間隔を設定 */
+            align-items: center;
+            justify-content: center;
+        }
+
+        .label {
+            display: flex;
+            align-items: center;
+        }
+
+        .square {
+            width: 13px;
+            height: 13px;
+            margin-right: 3px;
+        }
+
+        .ku { background-color: #aee2ff; }
+        .raku { background-color: #ffc5b6; }
+        .shi { background-color: #b6f2dc; }
+        .cho { background-color: #f7ef97; }
+        .son { background-color: #dab4f0; }
+        .sku { background-color: #ffa6e4; }
+
+
+
+.kokki img{
+    width: 8%;
+    margin-left: 2%;
+}
+
+
+
+
+
 .chikihyo {
     width: 400px;
+    background-color: #f5f5f5;
 }
 .chikihyo th{
     width: 10%;
-    writing-mode: vertical-rl;
+    padding: 10px;
 }
 
 
+.chikihyo table,.chikihyo th,.chikihyo td{
+    border: 1px solid #ddd; /* 表の枠線 */
+}
 
 
 
@@ -359,10 +411,60 @@ h4 {
     margin: 2px;
 }
 
+.wikiimage-b{
+    width: 300px;
+    background-color: #f5f5f5;
+    border-radius: 5px;
+    padding: 1% 1% 0.5%;
+    line-height: 0%;
+    font-size: 14PX;
+    margin: 2px;
+}
+
+.wikiimage-a{
+    width: 500px;
+    background-color: #f5f5f5;
+    border-radius: 5px;
+    padding: 1% 1% 0.5%;
+    line-height: 0%;
+    font-size: 14PX;
+    margin: 2px;
+    max-width: 500px;
+}
+
+
 .floatimg {
     float: right;
-
 }
+.flex {
+    display: flex;
+}
+
+
+.fake-link {
+    color: #BA0000;
+    cursor: pointer;
+}
+
+.fake-link:hover {
+    text-decoration: underline;
+    color: #ac0e0e;
+}
+
+.fake-link:active {
+    color: darkred; /* クリック時に文字色を少し暗くする */
+}
+
+
+
+
+a {
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+
 
 </style>
 
@@ -397,6 +499,8 @@ h4 {
 
 <div class="sidebarpc-naka">
     <ul>
+        <li><a href="#sentou">ページ先頭</a></li>
+        <li><a href="#gaiyou">概要</a></li>
         <li><a href="#chiri">地理</a></li>
             <ul>
                 <li><a href="#chisei">地勢</a></li>
@@ -430,10 +534,10 @@ h4 {
 </div>
 
 <div class="honbun">
-     <h1>愛楼内都</h1>
+     <h1 id="sentou">愛楼内都</h1>
 
                  <p>
-                愛楼内特別州（めろうないとくべつしゅう）は、双花共和国連邦の首都。
+                愛楼内特別州（めろうないとくべつしゅう）は、<span class="fake-link">双花共和国連邦</span>の首都。
 双花共和国連邦の中心部に位置する連邦直轄地であり、同国最大の都市である。
 愛楼内都の愛称は
             </p>
@@ -462,14 +566,14 @@ h4 {
                 <th colspan="2" class="hyomidasi">歴史</th>
                 <tr>
                     <th>設立</th>
-                    <td></td>
+                    <td>50年</td>
                 </tr>
                 <tr>
                     <th colspan="2" class="hyomidasi">行政</th>
                 </tr>
                 <tr>
                     <th>国</th>
-                    <td>双花共和国連邦</td>
+                    <td class="kokki">双花共和国連邦<img src="kokki.jpg"></td>
                 </tr>
                 <tr>
                     <th>州</th>
@@ -477,7 +581,7 @@ h4 {
                 </tr>
                 <tr>
                     <th>州知事</th>
-                    <td></td>
+                    <td>公共基盤最適化支援システム ⵟⵚფ-ⵋ4500 252年型</td>
                 </tr>
 
                 <tr>
@@ -511,12 +615,9 @@ h4 {
                     <th colspan="2" class="hyomidasi">地理</th>
                 <tr>
                     <th>隣接地域</th>
-                    <td>比野県<br>糸島県</td>
+                    <td>比野県<br>香賀県</td>
                 </tr>
-                <tr>
-                    <th>昼夜</th>
-                    <td></td>
-                </tr>
+
 
                 <tr>
                     <th colspan="2" class="hyomidasi">シンボル</th>
@@ -547,10 +648,57 @@ h4 {
                 </tr>
 
                 <tr>
+                    <th colspan="2" class="hyomidasi">その他</th>
+                </tr>
+                <tr>
+                    <th>昼夜</th>
+                    <td></td>
+                </tr>
+                <tr>
                     <th>郵便番号</th>
                     <td></td>
                 </tr>
             </table>
+        
+        <div class="gyoseikubun">
+            <img src="gyoseikubun.png">
+
+
+<div class="sikakuyoko">
+            <div class="label">
+                <div class="square ku"></div>
+                <span> - 区</span>
+            </div>
+<spam>/</spam>
+             <div class="label">
+                <div class="square raku"></div>
+                <span> - 洛</span>
+            </div>
+<spam>/</spam>
+            <div class="label">
+                <div class="square shi"></div>
+                <span> - 市</span>
+            </div>
+<spam>/</spam>
+            <div class="label">
+                <div class="square cho"></div>
+                <span> - 町</span>
+            </div>
+<spam>/</spam>
+            <div class="label">
+                <div class="square son"></div>
+                <span> - 村</span>
+            </div>
+<spam>/</spam>
+            <div class="label">
+                <div class="square sku"></div>
+                <span> - 特別区</span>
+            </div>
+</div>
+
+        </div>
+
+
         </div>
 
     </div>
@@ -559,17 +707,17 @@ h4 {
         <div class="text-area">
            
 
-            <h2>
+            <h2 id="gaiyou">
                 概要
             </h2>
 
 <p>
-愛楼内特別州は双花共和国連邦の政治・商業・金融・技術・文化などの中心地であり、無辺洋からメリメール地域への玄関口となる交通の要衝である。
-西メリメールを代表する世界都市であり、リースの世界都市ランキングでは224年以降継続してトップ5に入っている。また、235年以降は新しい社会契約の提言において、先進的な行政、都市計画が実施されており、第三次広域戦争後の各国の都市モデルになっている。
+愛楼内特別州は双花共和国連邦の政治・商業・金融・技術・文化などの中心地であり、<span class="fake-link">無辺洋</span>から<span class="fake-link">メリメール</span>地域への玄関口となる交通の要衝である。
+西メリメールを代表する世界都市であり、<span class="fake-link">リース</span>の世界都市ランキングでは224年以降継続してトップ5に入っている。また、235年以降は<span class="fake-link">新しい社会契約</span>の提言において、先進的な行政、都市計画が実施されており、<span class="fake-link">第三次広域戦争</span>後の各国の都市モデルになっている。
 </p><p>
-4ⵒ年、茜空条約機構から双花共和国連邦へ移行する際に連邦直轄地の首都として定められた。翌50年には特別州として正式に発足している。
+4ⵒ年、<span class="fake-link">茜空条約機構</span>から双花共和国連邦へ移行する際に連邦直轄地の首都として定められた。翌50年には特別州として正式に発足している。
 </p><p>
-閣座島北西部に位置し、46の区、9つの市町村、1つの特別区からなる。都市の大部分は、巨大なカルデラ湾である大環湾の沿岸に建設されている。湾岸部には工業区画や国際金融街、政府機関が集中し、世界有数の港湾施設と複数の国際空港、商業宇宙港を備えている。
+<span class="fake-link">閣座島</span>北西部に位置し、46の区、9つの市町村、1つの特別区からなる。都市の大部分は、巨大なカルデラ湾である<span class="fake-link">大環湾</span>の沿岸に建設されている。湾岸部には工業区画や国際金融街、政府機関が集中し、世界有数の港湾施設と複数の国際空港、商業宇宙港を備えている。
 </p><p>
 双花共和国連邦の中で最も小さい州であるが、人口は約6,251万人（252年現在）で、連邦内で最も多い。人口密度は1平方ジーラムあたり7,178人で、これも連邦内で最も高い数値となっている。
 </p>
@@ -597,6 +745,14 @@ h4 {
 <div>
 
 <h3 id="chisei">地勢</h3>
+
+<div class="floatimg">
+<div class="wikiimage-b">
+    <img class="wikiimage" src="chikeizu.jpg">
+    <p>愛楼内特別州の地形図</p>
+</div>
+</div>
+
 <p>
 愛楼内特別州は双花連邦共和国の中心部、閣座島の北西部に位置する。州の東部は空木州、南部は茜塔州に接し、北部および西部は無辺洋に面している。
 愛楼内特別州は8708સന²の州域を有し、うち水面面積は661સന²、陸地面積は8047સന²である。陸地の約65％を山地が占めている。
@@ -612,6 +768,7 @@ h4 {
 </p><p>
 州最北部の後光群島（御手五島、陽乃島、歩住島、東歩住島）は管轄州が未定の地域であったが、21ჵ年の海洋管轄区域及び大陸棚に関する法律により愛楼内特別州に編入された。
 </p>
+
 
 
 <h3 id="kikou">気候</h3>
@@ -647,20 +804,213 @@ h4 {
     
 <div>
     <p>
-        愛楼内特別区は、253年現在、39区7洛6市1町2村および1特別区の計55自治体で構成される。慣例的に、新浜地域、照安地域、燈楼地域、冥門地域、山潟地域の5地域に分類されることが多い。
+        愛楼内特別区は、253年現在、39区7洛6市1町2村および1特別区の計55自治体で構成される。慣例的に、新浜地域、燈楼地域、照安地域、冥門地域、山潟地域の5地域に分類されることが多い。
     </p><p>
         新浜地域の一部は、能生王朝時代から　地域の国家による統治が断続的に行われた歴史を持ち、現在も区ではなく洛として行政区分の違いを残している。
     </p>
 
+    <div class="wikiimage-a floatimg">
+        <img src="gyoseikubun-text.png">
+        <p>愛楼内特別州の自治体</p>
+    </div>
+
 <div>
     <table class="chikihyo">
-                <th colspan="2" class="hyomidasi">歴史</th>
-                <tr>
-                    <th>新浜地域</th>
-                    <td>あ</td>
-                </tr>
-                
+        <tr>
+            <th>新浜地域</th>
+            <td>
+                <ul>
+
+                    <li><span class="fake-link">開津洛</span></li>
+
+                    <li><span class="fake-link">浜間洛</span></li>
+
+                    <li><span class="fake-link">奈見恵洛</span></li>
+
+                    <li><span class="fake-link">神生ヶ口洛</span></li>
+
+                    <li><span class="fake-link">北燈籠沢洛</span></li>
+
+                    <li><span class="fake-link">風府洛</span></li>
+
+                    <li><span class="fake-link">平内洛</span></li>
+
+                    <li><span class="fake-link">嵩火台区</span></li>
+
+                    <li><span class="fake-link">一浦区</span></li>
+
+                    <li><span class="fake-link">高麗元町</span></li>
+
+                </ul>
+
+            </td>
+        </tr>
+
+        <tr>
+            <th>燈楼地域</th>
+            <td>
+                <ul>
+
+                    <li><span class="fake-link">灯台下区</span></li>
+
+                    <li><span class="fake-link">中区</span></li>
+
+                    <li><span class="fake-link">饗園区</span></li>
+
+                    <li><span class="fake-link">伊尾区</span></li>
+
+                    <li><span class="fake-link">桜然区</span></li>
+
+                    <li><span class="fake-link">阿照区</span></li>
+
+                    <li><span class="fake-link">甘辺区</span></li>
+
+                    <li><span class="fake-link">川角区</span></li>
+
+                    <li><span class="fake-link">百港区</span></li>
+
+                    <li><span class="fake-link">想沙区</span></li>
+
+                    <li><span class="fake-link">佐岡区</span></li>
+
+                    <li><span class="fake-link">陽影坂区</span></li>
+
+                    <li><span class="fake-link">東川区</span></li>
+
+                    <li><span class="fake-link">小金区</span></li>
+
+                    <li><span class="fake-link">櫻谷区</span></li>
+
+                    <li><span class="fake-link">弥辻区</span></li>
+
+                    <li><span class="fake-link">金上区</span></li>
+
+                    <li><span class="fake-link">峰守区</span></li>
+
+                </ul>
+
+            </td>
+        </tr>
+
+        <tr>
+            <th>照安地域</th>
+            <td>
+                <ul>
+
+                    <li><span class="fake-link">大日立区</span></li>
+
+                    <li><span class="fake-link">安草区</span></li>
+
+                    <li><span class="fake-link">空会市</span></li>
+
+                    <li><span class="fake-link">下須市</span></li>
+
+                    <li><span class="fake-link">上須市</span></li>
+
+                    <li><span class="fake-link">奥戸市</span></li>
+
+                </ul>
+
+            </td>
+        </tr>
+
+        <tr>
+            <th>冥門地域</th>
+            <td>
+                <ul>
+
+                    <li><span class="fake-link">豊根区</span></li>
+
+                    <li><span class="fake-link">名々野区</span></li>
+
+                    <li><span class="fake-link">薮沼区</span></li>
+
+                    <li><span class="fake-link">遊布区</span></li>
+
+                    <li><span class="fake-link">逆宮区</span></li>
+
+                    <li><span class="fake-link">上華坂区</span></li>
+
+                    <li><span class="fake-link">南暗波区</span></li>
+
+                    <li><span class="fake-link">北暗波区</span></li>
+
+                    <li><span class="fake-link">青井区</span></li>
+
+                    <li><span class="fake-link">郡城区</span></li>
+
+                    <li><span class="fake-link">多間名市</span></li>
+
+                    <li><span class="fake-link">利々森町</span></li>
+
+                    <li><span class="fake-link">慈雨之口町</span></li>
+
+                </ul>
+
+            </td>
+        </tr>
+
+        <tr>
+            <th>山潟地域</th>
+            <td>
+                <ul>
+
+                    <li><span class="fake-link">北愛楼内市</span></li>
+
+                    <li><span class="fake-link">久岡市</span></li>
+
+                    <li><span class="fake-link">山輪町</span></li>
+
+                    <li><span class="fake-link">迎神町</span></li>
+
+                    <li><span class="fake-link">赤三村</span></li>
+
+                </ul>
+
+            </td>
+        </tr>
+
+        <tr>
+            <th>島嶼部</th>
+            <td>
+                <ul>
+
+                    <li><span class="fake-link">青景市</span></li>
+
+                    <li><span class="fake-link">早見町</span></li>
+
+                    <li><span class="fake-link">日元村</span></li>
+
+                    <li><span class="fake-link">井手島村</span></li>
+
+                    <li><span class="fake-link">喜慧村</span></li>
+
+                    <li><span class="fake-link">御手五村</span></li>
+
+                    <li><span class="fake-link">陽乃村</span></li>
+
+                    <li><span class="fake-link">歩住島村</span></li>
+
+                </ul>
+
+            </td>
+        </tr>
+
+        <tr>
+            <th>特別区</th>
+            <td>
+                <ul>
+
+                    <li><span class="fake-link">新大環特別区</span></li>
+
+                </ul>
+
+            </td>
+        </tr>
+
+
     </table>
+        
 </div>
 
 </div>
@@ -709,7 +1059,7 @@ h4 {
 <h3>白根王朝</h3>
 
 <p>
--5世紀始め、C島を統一した白根王朝はB島全域も征服し、支配下に置く。
+-5世紀始め、C島を統一した白根王朝は閣座島全域も征服し、支配下に置く。
 能生王朝とのつながりが深かった愛楼内の住民は、白根王朝の政策に抵抗を示した。重税政策を契機に、-457年、「高沼戦争」が勃発。愛楼内は反乱軍による戦略的拠点として重要視された。[]
 </p>
 
@@ -717,12 +1067,12 @@ h4 {
 
 <p>
 -5世紀末、東西王国時代には樫大王国が興り、愛楼内を拠点とした。
-能宇王国による支援を受け、B島を統治した樫大王国は愛楼内を首都におく。
-政葦王は貴族や富裕層を呼び寄せ、蓮之宮宮殿が建設されるなど、「樫大文化」は愛楼内にも影響を与えた。
+能宇王国による支援を受け、閣座島を統治した樫大王国は愛楼内を首都におく。
+政葦王は貴族や富裕層を呼び寄せ、蓮之宮宮殿が建設されるなど、樫大文化は愛楼内にも影響を与えた。
 </p>
 
 <p>
-樫大王国の断絶に伴い、愛楼内を含むB島は加津場王国に編入された。
+樫大王国の断絶に伴い、愛楼内を含む閣座島は加津場王国に編入された。
 首都は仁賀に移されるも、引き続き貿易拠点として重要な地であり続けた。
 1 年には　と　を繋ぐ　運河が整備され、
 1 年、　寺が建立される。
@@ -739,7 +1089,7 @@ h4 {
 -2世紀半ば、金取民主化運動の中心地となり、-217年、図書議会による政治体制のもと、下原書国の首都となる。愛楼内には「阿照山図書館」が置かれ、再度政治の中心となる。愛楼内は学術都市、商業都市として繁栄した。
 
 
--157年、下原書国へ侵略を進めた同屯帝国はC島を占領。愛楼内には多くの難民が押し寄せ治安が悪化した。図書議会は機能不全に陥り、B島は内戦状態へと突入する。
+-157年、下原書国へ侵略を進めた同屯帝国はC島を占領。愛楼内には多くの難民が押し寄せ治安が悪化した。図書議会は機能不全に陥り、閣座島は内戦状態へと突入する。
 </P>
 
 
@@ -867,7 +1217,18 @@ h4 {
 </div>
 
 
+
+
 <div>
+<h3>人工知能の導入</h3>
+
+<p>新しい社会契約提言以降、愛楼内特別州では、州政府、州裁判所、地方自治体の全ての組織において、人工知能が導入されている。<br>
+また、新大環特別区では提言に基づき、行政の全てを人工知能が担う実験的な試みが行われている。
+
+<p>AI政策シミュレーター「愛」および自律的評価アルゴリズム「静」が導入され、政策立案の事前シミュレーションや政策実施後の効果測定などに活用されている。</p>
+
+<h4>人工知能の必要要件</h4>
+
 <p>各政治役職へのAGI登用に関し、詳細な基準が定められている。</p>
 
 

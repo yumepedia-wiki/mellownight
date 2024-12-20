@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>愛楼内都 - Wiki</title>
+    <title>愛楼内都 - Yumepedia</title>
     <style>
         
 
@@ -165,7 +165,7 @@ body {
 
 .side-area {
     
-   border: 1px solid #ddd; /* 表の枠線 */
+   border: 1px solid silver; /* 表の枠線 */
     background-color: #f5f5f5;
 }
 
@@ -179,6 +179,7 @@ body {
         table {
             width: 100%; /* 表を横幅いっぱいにする */
             border-collapse: collapse; /* 枠線を一体化 */
+            border-top: 1px solid silver;
         }
 
         table, th, td {
@@ -223,7 +224,10 @@ body {
         }
 
 
-
+        .gyoseikubun{
+            border-top: 1px solid silver;
+            padding: 10px;
+        }
 
         .gyoseikubun img{
             width: 70%;
@@ -265,9 +269,22 @@ body {
     margin-left: 2%;
 }
 
+.sisyou {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 10px;
+    border-top: 1px solid silver;
+    padding-right: 30px;
+}
 
+.sisyou img {
+    height: 100px;
+}
 
-
+.sisyou p{
+    line-height: 0px;
+}
 
 .chikihyo {
     width: 400px;
@@ -308,7 +325,7 @@ body {
 
 .sitasen {
   display: block;
-  border-bottom: 1px solid lightgray;
+  border-bottom: 1px solid silver;
   padding-bottom: 3px;
   margin-top: 20px;
 
@@ -371,7 +388,7 @@ details[open] .dainariicon {
 
 h1 {
     display: block;
-    border-bottom: 1px solid lightgray;
+    border-bottom: 1px solid silver;
     padding-bottom: 3px;
     margin-top: 20px;
     font-weight: lighter;
@@ -587,6 +604,19 @@ a:hover {
                 <img src="7.jpg">
             </div>
 
+            <div class="sisyou">
+                <div>
+                    <img src="siki.png">
+                    <p>特別州旗</p>
+                </div>
+            
+                <div>
+                    <img src="sisyou.png">
+                    <p>特別州章</p>
+                </div>
+            </div>
+
+
             <table>
                 <th colspan="2" class="hyomidasi">歴史</th>
                 <tr>
@@ -649,11 +679,11 @@ a:hover {
                 </tr>
                 <tr>
                     <th>州の花</th>
-                    <td>きじょう</td>
+                    <td>スイレイ</td>
                 </tr>
                 <tr>
                     <th>州の果実</th>
-                    <td>スイレイ</td>
+                    <td>ロコ</td>
                 </tr>
 
                 <tr>
@@ -728,7 +758,7 @@ a:hover {
         <div class="text-area">
            
 
-            <h2 id="gaiyou">
+            <h2 id="gaiyou" class="sitasen">
                 概要
             </h2>
 

@@ -482,9 +482,7 @@ h4 {
     color: darkred; /* クリック時に文字色を少し暗くする */
 }
 
-.element {
-    -webkit-tap-highlight-color: rgba(0,0,0,0); /* タップ時の強調表示を無効化 */
-}
+
 
 
 
@@ -1739,6 +1737,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
     });
   });
+});
+
+
+element.addEventListener('touchstart', function(e) {
+    // タップしたときの処理
 });
 </script>
 

@@ -1693,6 +1693,8 @@ a:hover {
 
                     <li><span class="fake-link">世界中央貿易センタータワー</span></li>
 
+                    <li><span class="fake-link">愛楼内シアターホール</span></li>
+
                     <li><span class="fake-link">饗園グルメ通り</span></li>
 
                     <li><span class="fake-link">南大路ドーム</span></li>
@@ -1713,6 +1715,8 @@ a:hover {
 
                     <li><span class="fake-link">グリッジタワー澱谷</span></li>
 
+                    <li><span class="fake-link">百港歴史美術センター</span></li>
+
                     <li><span class="fake-link">桜然広告塔</span></li>
 
                     <li><span class="fake-link">桜然メディアタワー</span></li>
@@ -1722,6 +1726,8 @@ a:hover {
                     <li><span class="fake-link">桜然駅</span></li>
 
                     <li><span class="fake-link">阿照山図書館</span></li>
+
+                    <li><span class="fake-link">東川区立美術館</span></li>
 
 
 
@@ -1746,6 +1752,7 @@ a:hover {
 
 <h4>冥門地域</h4>
                 <ul>
+                    <li><span class="fake-link">冥門寺</span></li>
 
                     <li><span class="fake-link">暗波通り</span></li>
 
@@ -1830,21 +1837,27 @@ document.addEventListener('DOMContentLoaded', function() {
 
   tocLinks.forEach(link => {
     link.addEventListener('click', function(event) {
+      event.preventDefault(); // リンクのデフォルト動作を無効化
+
       const targetId = this.getAttribute('href');
-      const targetDetails = document.querySelector(targetId);
+      const targetElement = document.querySelector(targetId);
+
+      // targetElement が details 要素内の要素の場合、
+      // closest() を使って親の details 要素を取得
+      const targetDetails = targetElement.closest('details'); 
 
       if (targetDetails && !targetDetails.open) {
         targetDetails.open = true;
       }
 
-      // targetにスクロールする
-      if (targetDetails) {
-        targetDetails.scrollIntoView({ behavior: 'smooth' });
-      }
+      // スムーズにスクロール
+      targetElement.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start' 
+      });
     });
   });
 });
-
 
 
 </script>
